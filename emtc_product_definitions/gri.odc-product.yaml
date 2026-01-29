@@ -1,0 +1,17 @@
+---
+name: gri
+description: Copernicus Sentinel-2 Global Reference Image (S2 GRI) Multi-Layer Copernicus Sentinel-2 GRI in Level-1C
+metadata_type: eo3_gri
+
+metadata:
+  product:
+    name: gri
+  properties:
+    odc:file_format: GeoTIFF
+
+measurements:
+  - name: "red"
+    aliases: [band_04, red, B04]
+    units: "1"
+    dtype: uint16
+    nodata: 0

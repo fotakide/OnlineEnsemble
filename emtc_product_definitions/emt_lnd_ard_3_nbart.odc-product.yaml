@@ -1,0 +1,120 @@
+---
+name: emt_lnd_ard_3_nbart
+license: CC-BY-4.0
+metadata_type: eo3_landsat_ard_local
+description: EMTC Landsat Analysis Ready Data Collection 3 - NBAR-T Cloud free with Coregistration via AROSICS
+
+# For all ‘nbar_’ bands, Surface Reflectance is scaled between 0 and 10,000.
+# Must be added in datacube
+
+metadata:
+  product:
+    name: emt_lnd_ard_3_nbart
+  properties:
+    odc:file_format: GeoTIFF
+    odc:product_family: ard
+    dea:product_maturity: stable
+
+
+measurements:
+  # Bands (6)
+  - name: "nbart_blue"
+    aliases: [blue]
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "nbart_green"
+    aliases: [green]
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "nbart_red"
+    aliases: [red]
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "nbart_nir08"
+    aliases: [nir08]
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "nbart_swir16"
+    aliases: [swir16]
+    units: "1"
+    dtype: int16
+    nodata: -999
+    
+  - name: "nbart_swir22"
+    aliases: [swir22]
+    units: "1"
+    dtype: int16
+    nodata: -999
+  
+  # Angles (4)
+  - name: "view_zenith"
+    aliases: [satellite_view]
+    units: "1"
+    dtype: float32
+    nodata: .nan
+  - name: "solar_zenith"
+    units: "1"
+    dtype: float32
+    nodata: .nan
+  - name: "relative_azimuth"
+    units: "1"
+    dtype: float32
+    nodata: .nan
+  - name: "solar_azimuth"
+    units: "1"
+    dtype: float32
+    nodata: .nan
+
+  # Spectral indices multiplied by 1000 (9)
+  - name: "kndvi"
+    units: "1"
+    dtype: int16
+    nodata: -9999
+
+  - name: "ndvi"
+    units: "1"
+    dtype: int16
+    nodata: -9999
+  
+  - name: "evi"
+    units: "1"
+    dtype: int16
+    nodata: -9999
+
+  - name: "savi"
+    units: "1"
+    dtype: int16
+    nodata: -9999
+
+  - name: "nbr"
+    units: "1"
+    dtype: int16
+    nodata: -9999 
+
+  - name: "ndmi"
+    units: "1"
+    dtype: int16
+    nodata: -9999 
+
+  - name: "tcg"
+    units: "1"
+    dtype: int16
+    nodata: -9999 
+
+  - name: "tcw"
+    units: "1"
+    dtype: int16
+    nodata: -9999 
+
+  - name: "tcb"
+    units: "1"
+    dtype: int16
+    nodata: -9999 

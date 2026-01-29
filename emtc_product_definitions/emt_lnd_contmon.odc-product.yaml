@@ -1,0 +1,556 @@
+---
+name: emt_lnd_contmon
+license: CC-BY-4.0
+metadata_type: eo3_lnd_nrt
+description: EMTC Continuous monitoring of 1 calendar year
+
+# Must be added in datacube
+
+metadata:
+  product:
+    name: emt_lnd_contmon
+  properties:
+    odc:file_format: GeoTIFF
+    odc:product_family: landsat
+
+
+measurements:
+  - name: "kndvi_ccdc_breakpoints"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "kndvi_ccdc_breakpoints_days"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "kndvi_ccdc_magnitudes"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_ccdc_rmse"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_ccdc_intercept"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_ccdc_trend"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "kndvi_ccdc_a1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "kndvi_ccdc_b1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_ccdc_a2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+  
+  - name: "kndvi_ccdc_b2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_ccdc_a3"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_ccdc_b3"
+    units: "1"
+    dtype: float32
+    nodata: nan 
+
+  - name: "kndvi_ewma_breakpoints"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "kndvi_ewma_breakpoints_days"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "kndvi_ewma_magnitudes"
+    units: "1"
+    dtype: float32
+    nodata: nan 
+
+  - name: "kndvi_ewma_sigma"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_ewma_intercept"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_ewma_trend"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "kndvi_ewma_a1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "kndvi_ewma_b1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_ewma_a2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+  
+  - name: "kndvi_ewma_b2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_ewma_a3"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_ewma_b3"
+    units: "1"
+    dtype: float32
+    nodata: nan 
+
+  - name: "kndvi_mosum_breakpoints"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "kndvi_mosum_breakpoints_days"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "kndvi_mosum_magnitudes"
+    units: "1"
+    dtype: float32
+    nodata: nan 
+
+  - name: "kndvi_mosum_sigma"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_mosum_intercept"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_mosum_trend"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "kndvi_mosum_a1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "kndvi_mosum_b1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_mosum_a2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+  
+  - name: "kndvi_mosum_b2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_mosum_a3"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "kndvi_mosum_b3"
+    units: "1"
+    dtype: float32
+    nodata: nan 
+
+  - name: "nbr_ccdc_breakpoints"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "nbr_ccdc_breakpoints_days"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "nbr_ccdc_magnitudes"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_ccdc_rmse"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_ccdc_intercept"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_ccdc_trend"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "nbr_ccdc_a1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "nbr_ccdc_b1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_ccdc_a2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+  
+  - name: "nbr_ccdc_b2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_ccdc_a3"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_ccdc_b3"
+    units: "1"
+    dtype: float32
+    nodata: nan 
+
+  - name: "nbr_ewma_breakpoints"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "nbr_ewma_breakpoints_days"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "nbr_ewma_magnitudes"
+    units: "1"
+    dtype: float32
+    nodata: nan 
+
+  - name: "nbr_ewma_sigma"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_ewma_intercept"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_ewma_trend"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "nbr_ewma_a1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "nbr_ewma_b1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_ewma_a2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+  
+  - name: "nbr_ewma_b2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_ewma_a3"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_ewma_b3"
+    units: "1"
+    dtype: float32
+    nodata: nan 
+
+  - name: "nbr_mosum_breakpoints"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "nbr_mosum_breakpoints_days"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "nbr_mosum_magnitudes"
+    units: "1"
+    dtype: float32
+    nodata: nan 
+
+  - name: "nbr_mosum_sigma"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_mosum_intercept"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_mosum_trend"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "nbr_mosum_a1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "nbr_mosum_b1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_mosum_a2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+  
+  - name: "nbr_mosum_b2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_mosum_a3"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "nbr_mosum_b3"
+    units: "1"
+    dtype: float32
+    nodata: nan 
+
+  - name: "ndmi_ccdc_breakpoints"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "ndmi_ccdc_breakpoints_days"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "ndmi_ccdc_magnitudes"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_ccdc_rmse"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_ccdc_intercept"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_ccdc_trend"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "ndmi_ccdc_a1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "ndmi_ccdc_b1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_ccdc_a2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+  
+  - name: "ndmi_ccdc_b2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_ccdc_a3"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_ccdc_b3"
+    units: "1"
+    dtype: float32
+    nodata: nan 
+
+  - name: "ndmi_ewma_breakpoints"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "ndmi_ewma_breakpoints_days"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "ndmi_ewma_magnitudes"
+    units: "1"
+    dtype: float32
+    nodata: nan 
+
+  - name: "ndmi_ewma_sigma"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_ewma_intercept"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_ewma_trend"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "ndmi_ewma_a1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "ndmi_ewma_b1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_ewma_a2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+  
+  - name: "ndmi_ewma_b2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_ewma_a3"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_ewma_b3"
+    units: "1"
+    dtype: float32
+    nodata: nan 
+
+  - name: "ndmi_mosum_breakpoints"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "ndmi_mosum_breakpoints_days"
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "ndmi_mosum_magnitudes"
+    units: "1"
+    dtype: float32
+    nodata: nan 
+
+  - name: "ndmi_mosum_sigma"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_mosum_intercept"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_mosum_trend"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "ndmi_mosum_a1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+    
+  - name: "ndmi_mosum_b1"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_mosum_a2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+  
+  - name: "ndmi_mosum_b2"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_mosum_a3"
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "ndmi_mosum_b3"
+    units: "1"
+    dtype: float32
+    nodata: nan 

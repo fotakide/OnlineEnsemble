@@ -1,0 +1,56 @@
+---
+name: ls_gm_cyear_1
+license: CC-BY-4.0
+metadata_type: eo3
+description: Eastern Macedonia and Thrace Landsat Geomedian 1 Calendar Year Collection 1
+
+metadata:
+  product:
+    name: ls_gm_cyear_1
+  properties:
+    odc:file_format: GeoTIFF
+    odc:product_family: geomedian
+    dea:product_maturity: stable
+
+
+measurements:
+  - name: "nbart_blue"
+    aliases: [nbart_blue_gm]
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "nbart_green"
+    aliases: [nbart_green_gm]
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "nbart_red"
+    aliases: [nbart_red_gm]
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "nbart_nir08"
+    aliases: [nbart_nir08_gm]
+    units: "1"
+    dtype: int16
+    nodata: -999
+
+  - name: "nbart_swir16"
+    aliases: [nbart_swir16_gm]
+    units: "1"
+    dtype: int16
+    nodata: -999
+    
+  - name: "nbart_swir22"
+    aliases: [nbart_swir22_gm]
+    units: "1"
+    dtype: int16
+    nodata: -999
+    
+  - name: "count"
+    units: "1"
+    dtype: int16
+    nodata: -999

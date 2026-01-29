@@ -1,0 +1,59 @@
+---
+name: emt_lnd_cont_classified
+license: CC-BY-4.0
+metadata_type: eo3
+description: Feather processed EMTC Disturbance Agents Classification Map
+
+# Must be added in datacube
+
+metadata:
+  product:
+    name: emt_lnd_cont_classified
+  properties:
+    odc:file_format: GeoTIFF
+    odc:product_family: landsat
+
+
+measurements:
+  # Bands
+  - name: "classification"
+    aliases: [class]
+    units: "1"
+    dtype: int8
+    nodata: -1
+  
+  - name: "p_drought"
+    aliases: [drought_prob]
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "p_clearing"
+    aliases: [clearing_prob]
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "p_stable"
+    aliases: [stable_prob]
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "p_wildfire"
+    aliases: [wildfire_prob]
+    units: "1"
+    dtype: float32
+    nodata: nan
+
+  - name: "w_bp_days"
+    aliases: [w_bp_days]
+    units: "1"
+    dtype: uint32
+    nodata: 0
+    
+  - name: "w_magn"
+    aliases: [w_magn]
+    units: "1"
+    dtype: float32
+    nodata: nan

@@ -1,0 +1,260 @@
+---
+name: eo3_lnd_nrt
+description: EO3 Continuous monitoring use the `nrt` package by JRC (https://github.com/ec-jrc/nrt)
+dataset:
+  id: [id]  # No longer configurable in newer ODCs.
+  sources: [lineage, source_datasets]  # No longer configurable in newer ODCs.
+
+  grid_spatial: [grid_spatial, projection]
+  measurements: [measurements]
+  creation_dt: [properties, 'odc:processing_datetime']
+  label: [label]
+  format: [properties, 'odc:file_format']
+
+  search_fields:
+    platform:
+      description: Platform code
+      offset: [properties, 'eo:platform']
+      indexed: false
+
+    instrument:
+      description: Instrument name
+      offset: [properties, 'eo:instrument']
+      indexed: false
+
+    product_family:
+      description: Product family code
+      offset: [properties, 'odc:product_family']
+      indexed: false
+
+    region_code:
+      description: >
+        Spatial reference code from the provider.
+        For Landsat region_code is a scene path row:
+                '{:03d}{:03d}.format(path,row)'
+        For Sentinel it is MGRS code.
+        In general it is a unique string identifier
+        that datasets covering roughly the same spatial
+        region share.
+
+      offset: [properties, 'odc:region_code']
+
+    crs_raw:
+      description: The raw CRS string as it appears in metadata
+      offset: ['crs']
+      indexed: false
+
+    dataset_maturity:
+      description: One of - final|interim|nrt  (near real time)
+      offset: [properties, 'dea:dataset_maturity']
+
+    nrt:
+      description: nrt package version
+      offset: [properties, 'cor:version']
+
+    cloud_cover:
+      description: Cloud cover percentage [0, 100]
+      type: double
+      offset: [properties, 'eo:cloud_cover']
+
+    time:
+      description: Acquisition time range
+      type: datetime-range
+      min_offset:
+        - [properties, 'dtr:start_datetime']
+        - [properties, datetime]
+      max_offset:
+        - [properties, 'dtr:end_datetime']
+        - [properties, datetime]
+
+    lon:
+      description: Longitude range
+      type: double-range
+      min_offset:
+        - [extent, lon, begin]
+      max_offset:
+        - [extent, lon, end]
+
+    lat:
+      description: Latitude range
+      type: double-range
+      min_offset:
+        - [extent, lat, begin]
+      max_offset:
+        - [extent, lat, end]
+
+    landsat_product_id:
+      description: Landsat Product ID
+      indexed: false
+      offset:
+        - properties
+        - landsat:landsat_product_id
+
+    # semi-auto generated below
+    eo_gsd:
+      description: Ground sample distance, meters
+      indexed: false
+      offset:
+        - properties
+        - eo:gsd
+      type: double
+    eo_sun_azimuth:
+      description: 'TODO: <eo:sun_azimuth>'
+      indexed: false
+      offset:
+        - properties
+        - eo:sun_azimuth
+      type: double
+    eo_sun_elevation:
+      description: 'TODO: <eo:sun_elevation>'
+      indexed: false
+      offset:
+        - properties
+        - eo:sun_elevation
+      type: double
+    
+    # nrt info
+    nrt_version:
+      description: Version of the python package nrt
+      indexed: false
+      offset:
+        - properties
+        - nrt:version
+    # MOSUM
+    nrt_mosum_fit_method:
+      description: MoSum model fitting method
+      indexed: false
+      offset:
+        - properties
+        - nrt:mosum_fit_method
+    nrt_mosum_screen_outliers_method:
+      description: MoSum model screen outlier method
+      indexed: false
+      offset:
+        - properties
+        - nrt:mosum_screen_outliers_method
+    nrt_mosum_trend:
+      description: MoSum model trend
+      indexed: false
+      offset:
+        - properties
+        - nrt:mosum_trend
+      type: string
+    nrt_mosum_harmonic_order:
+      description: MoSum model harmonic order
+      indexed: false
+      offset:
+        - properties
+        - nrt:mosum_harmonic_order
+      type: integer
+    nrt_mosum_sensitivity:
+      description: MoSum model sensitivity
+      indexed: false
+      offset:
+        - properties
+        - nrt:mosum_sensitivity
+      type: double
+    nrt_mosum_hfrac:
+      description: MoSum model h fraction
+      indexed: false
+      offset:
+        - properties
+        - nrt:mosum_hfrac
+      type: double
+    nrt_mosum_alpha:
+      description: MoSum model alpha
+      indexed: false
+      offset:
+        - properties
+        - nrt:mosum_alpha
+      type: double
+    # CCDC
+    nrt_ccdc_fit_method:
+      description: CCDC model fitting method
+      indexed: false
+      offset:
+        - properties
+        - nrt:ccdc_fit_method
+    nrt_ccdc_screen_outliers_method:
+      description: CCDC model screen outlier method
+      indexed: false
+      offset:
+        - properties
+        - nrt:ccdc_screen_outliers_method
+    nrt_ccdc_trend:
+      description: CCDC model trend
+      indexed: false
+      offset:
+        - properties
+        - nrt:ccdc_trend
+      type: string
+    nrt_ccdc_harmonic_order:
+      description: CCDC model harmonic order
+      indexed: false
+      offset:
+        - properties
+        - nrt:ccdc_harmonic_order
+      type: integer
+    nrt_ccdc_sensitivity:
+      description: CCDC model sensitivity
+      indexed: false
+      offset:
+        - properties
+        - nrt:ccdc_sensitivity
+      type: integer
+    nrt_ccdc_boundary:
+      description: CCDC model boundary
+      indexed: false
+      offset:
+        - properties
+        - nrt:ccdc_boundary
+      type: integer
+
+    #EWMA
+    nrt_ewma_fit_method:
+      description: EWMA model fitting method
+      indexed: false
+      offset:
+        - properties
+        - nrt:ewma_fit_method
+    nrt_ewma_screen_outliers_method:
+      description: EWMA model screen outlier method
+      indexed: false
+      offset:
+        - properties
+        - nrt:ewma_screen_outliers_method
+    nrt_ewma_trend:
+      description: EWMA model trend
+      indexed: false
+      offset:
+        - properties
+        - nrt:ewma_trend
+      type: string
+    nrt_ewma_harmonic_order:
+      description: EWMA model harmonic order
+      indexed: false
+      offset:
+        - properties
+        - nrt:ewma_harmonic_order
+      type: integer
+    nrt_ewma_lambda:
+      description: EWMA model recent observations weight
+      indexed: false
+      offset:
+        - properties
+        - nrt:ewma_lambda
+      type: double
+    nrt_ewma_sensitivity:
+          description: EWMA model sensitivity
+          indexed: false
+          offset:
+            - properties
+            - nrt:ewma_sensitivity
+          type: double
+    nrt_ewma_outlier_threshold:
+      description: EWMA model outlier threshold
+      indexed: false
+      offset:
+        - properties
+        - nrt:ewma_outlier_threshold
+      type: double
