@@ -168,9 +168,7 @@ def classify_disturbances(year: str, region_code: str, storage_path: str, versio
         fused_breakpoints_bo_cat = fused_breakpoints_bo_cat.where(fused_breakpoints_bo_cat>0, -1)
         fused_breakpoints_bo_cat = fused_breakpoints_bo_cat.where(sea_mask_xr)
 
-        thres = 0.25
         breakpoints_bo_cat = df_cat_probabilities.to_xarray()
-        breakpoints_bo_cat = breakpoints_bo_cat.where(breakpoints_bo_cat>thres, -1, 1)
         breakpoints_bo_cat = breakpoints_bo_cat.where(sea_mask_xr)
 
         # Idx of max probability
