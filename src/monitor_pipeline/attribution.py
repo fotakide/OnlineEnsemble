@@ -150,7 +150,7 @@ def classify_disturbances(year: str, region_code: str, storage_path: str, versio
         
         
         # =============================================================================
-        #                          PREDICTION OF DRIVER OF CHANGE
+        #                          PREDICTION OF AGENT OF CHANGE
         # =============================================================================
         _log.info('Predicting driver of change via trained model')
         target = 'driver'
